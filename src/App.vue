@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app color="black" dark>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>PROJETO</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-navigation-drawer v-model="drawer" absolute temporary>
+      <v-img src="./assets/logo-unisales.png" class="pt-5 text-center">
+
+      </v-img>
+
+      <v-divider></v-divider>
+      <v-list nav dense>
+        <v-list-item-group active-class="grey--text text--accent-4">
+          <v-list-item to="/">
+            <v-list-item-title>Início</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item to="/cadastro">
+            <v-list-item-title>PUBLICAÇÕES</v-list-item-title>
+          </v-list-item>
+
+        </v-list-item-group>
+      </v-list>
+
+    </v-navigation-drawer>
+
+
+    <router-view />
+
+
+  </v-app>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+    drawer: false
+  }),
+};
+</script>
