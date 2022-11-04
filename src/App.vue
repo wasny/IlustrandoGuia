@@ -17,7 +17,7 @@
             <v-list-item-title>Início</v-list-item-title>
           </v-list-item>
 
-          <v-list-item to="/cadastro">
+          <v-list-item to="/publicacoes">
             <v-list-item-title>PUBLICAÇÕES</v-list-item-title>
           </v-list-item>
 
